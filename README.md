@@ -1,6 +1,6 @@
 # c_plus_plus_learning
 
-1)Arrays&vectors\n
+1)Arrays&vectors
 2)statements&operators
 3)Controlling program flow(if,for,while loop)
 4)characters&string
