@@ -1,0 +1,37 @@
+*TOPİC=OOP
+
+Bir sınıftan nesne oluşturulduğunda nesneyi hazırlayan, şekillendiren yordamlar oluşur biz bunlara constructors(yapıcı) adı veriyoruz.
+Constructor dışarıdan veri alabilir ama geriye değer döndürmez.Bir sınıftan nesne oluşturduğumuzda yapılmasını istediğimiz işlemleri constructor lar 
+ile gerçekleştiririz.
+
+EX:
+public class kisi {
+
+public kisi() {
+
+//Yapılacak işlemler
+
+}
+
+}
+
+EX:
+namespace StructureSample
+{
+    class Program
+    {
+        Public Class Ucret 
+        { 
+          Public decimal mesai;
+          Public Ucret(byte ucretgroupıd)
+          {
+             if(ucretgroupıd==1)
+             {
+                 mesai=50;
+              }
+              
+              if(ucretgroupıd==2)
+             {
+                 mesai=100;
+              }
+              
