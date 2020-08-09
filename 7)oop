@@ -34,4 +34,31 @@ namespace StructureSample
              {
                  mesai=100;
               }
+           }
+           Public decimal ucrethesapla()
+           {
+              //burada standart veriler tanımladık.
+              decimal ucret=1200;
+              byte fazlaÇalışılanSaat=15;
+              return((fazlaÇalışılanSaat*mesai)+ucret));
+            }
+        }
+        static Void main( string[] args)
+        {
+          Ucret maas=new Ucret(2);
+          Console.WriteLine("mesai saat ücreti:", maas.mesai);
+          decimal alınacakucret=maas.ucrethesapla();
+          Console.WriteLine("Fonksiyon sonucu:", alınacakucret);
+          Console.Readline;
+       }
+       
+   }
+   
+   
+  
+     
+     
+            
+            
+            
               
