@@ -50,5 +50,23 @@ Class Checking_Account: Public Account {
 Class Trust_Account:Public Account{
 //balance, deposite, withdraw,....
 };
+***********************************
+
+Single Inheritance: A new class is created from another 'single' classes.
+Multiple Inheritance: A new class is created from two or more other classes.
+
+Classes:
+-A
+-B is derived from A
+-C is derived from A
+-D is derived from C
+-E is derived from D
+Generalization:-->E<D<C<B<A
+Specialization:-->A<B<C<D<E
+
+Classes:
+
+
+
 
 
