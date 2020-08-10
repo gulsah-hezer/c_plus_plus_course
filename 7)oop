@@ -195,7 +195,11 @@ Output:
 p1.x = 10, p1.y = 15
 p2.x = 10, p2.y = 15 
 
-     
+MOVE CONSTRUCTURE
+
+Move Constructor moves an object rather than copy it.
+
+
      
             
             
