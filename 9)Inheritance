@@ -1,0 +1,54 @@
+INHERITANCE
+
+What is it and why is it used?
+-Provides a method (function) for creating new classes from existing classes 
+-The new class contains the data and behaviours of existing class
+-Allow for reuse of existing classes
+
+In many applications, when you're designing your solution you can identify classes in your application that are related to one another.
+Sometimes the relationship is clear and other times the relationship might be less clear.This line provides some examples of related classes in 
+a game application.
+
+Related classes:
+-Player, Enemy, Level Boss, Hero, Super Player etc.
+-Account, Saving Account, Checking Account, Trust Account etc.
+-Person, Employee, Student, Faculty, Staff, Administrator etc.
+
+Accounts - Without inheritance code dublication.
+
+Class Account{
+//balance, deposite, withdraw,....
+};
+
+Class Savings_Account{
+//balance, deposite, withdraw,....
+};
+
+Class Checking_Account{
+//balance, deposite, withdraw,....
+};
+
+Class Trust_Account{
+//balance, deposite, withdraw,....
+};
+
+*********************************
+Accounts - With inheritance code reuse.
+
+Class Account{
+//balance, deposite, withdraw,....
+};
+
+Class Savings_Account:public Account {
+//balance, deposite, withdraw,....
+};
+
+Class Checking_Account: Public Account {
+//balance, deposite, withdraw,....
+};
+
+Class Trust_Account:Public Account{
+//balance, deposite, withdraw,....
+};
+
+
