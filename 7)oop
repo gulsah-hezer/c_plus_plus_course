@@ -1,5 +1,8 @@
 *TOPİC=OOP
 
+
+*CONSTRUCTURE*
+
 Bir sınıftan nesne oluşturulduğunda nesneyi hazırlayan, şekillendiren yordamlar oluşur biz bunlara constructors(yapıcı) adı veriyoruz.
 Constructor dışarıdan veri alabilir ama geriye değer döndürmez.Bir sınıftan nesne oluşturduğumuzda yapılmasını istediğimiz işlemleri constructor lar 
 ile gerçekleştiririz.
@@ -53,9 +56,145 @@ namespace StructureSample
        }
        
    }
-   
-   
+ 
+ 
+ *DESTRUCTURE*
+ 
+ Destructure(yıkıcı) olarak adlandırılan fonksiyonlar veya methodlar ise yaptığı işin tersini yaparlar yani görevi biten nesneyi yok ederler.
+
+ class time
+ {
+   public:
+          time(); //constructure
+          -time(); //destructure
+          
+  }
   
+ default constructure:
+ Class Player
+ {
+ private:
+ std::string name;
+ int health;
+ int xp;
+ public:
+ void set_name(std::string name_val)
+ name=name_val;
+ }
+ std::string get_name(){
+ return name;
+ }
+     Player(){
+     name="None";
+     health=100;
+     xp=3;
+     }
+ };
+ 
+ yada 
+     Player(std::string name_val, int health_val, int xp_val){
+     name=name_val;
+     health=health_val;
+     xp=xp_val;
+     }
+ }
+int main(){
+Player frank;
+Player frank("Frank",100,13);
+frank.set_name("Frank");
+cout<<frank.get_name()<<endl;
+return 0;
+}
+
+EX:
+
+class Dog {
+private:
+    std::string name;
+    int age;
+public:
+Dog() {
+        name = "None";
+        age = 0;
+    }
+
+    std::string get_name() {return name; }
+    void set_name(std::string n) {name = n; }
+    int get_age() {return age; }
+    void set_age(int a) { age = a;}
+    int get_dog_years() { return age * 7; }
+    std::string speak() { return "Woof";}
+
+};
+
+Class Player 
+{
+private:
+       std::string name;
+       int health;
+       int xp;
+public:
+//overloadded constructors
+Player();
+Player(std:: string name_val)
+Player(std:: string name_val, int health_val, int xp_val)
+};
+ Player::Player(){
+ name="None";
+ health=0;
+ xp=0;
+ }
+ Player::Player(std::string name_val){
+ name=name_val;
+ health=0;
+ xp=0;
+ }
+ Player::Player(std:: string name_val, int health_val, int xp_val){
+ name=name_val;
+ health=health_val;
+ xp=xp_val;
+ }
+ 
+ Player hero{"Hero"};           //Hero,0,0
+ Player frank{"Frank",100,4};   //Frank,100,4
+ Player *enemy=new Player("Enemy",1000, 0);
+ delete enemy;
+ 
+COPY CONSTRUCTURE:
+
+#include<iostream> 
+using namespace std; 
+
+class Point 
+{ 
+private: 
+	int x, y; 
+public: 
+	Point(int x1, int y1) { x = x1; y = y1; } 
+
+	// Copy constructor 
+	Point(const Point &p2) {x = p2.x; y = p2.y; } 
+
+	int getX()		 { return x; } 
+	int getY()		 { return y; } 
+}; 
+
+int main() 
+{ 
+	Point p1(10, 15); // Normal constructor is called here 
+	Point p2 = p1; // Copy constructor is called here 
+
+	// Let us access values assigned by constructors 
+	cout << "p1.x = " << p1.getX() << ", p1.y = " << p1.getY(); 
+	cout << "\np2.x = " << p2.getX() << ", p2.y = " << p2.getY(); 
+
+	return 0; 
+}
+
+Output:
+p1.x = 10, p1.y = 15
+p2.x = 10, p2.y = 15 
+
      
      
             
