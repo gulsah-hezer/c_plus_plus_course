@@ -1,5 +1,7 @@
 # c_plus_plus_learning
 
+In here, there is a c++ learning topics.
+
 1)Arrays&vectors
 2)statements&operators
 3)Controlling program flow(if,for,while loop)
