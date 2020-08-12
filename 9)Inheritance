@@ -84,7 +84,113 @@ Inheritance Versus Composition
 -Player has a Special Attack 
 -Circle has a Location 
 
--
+      *********************
+      Inheritance Challenge
+      *********************
+You are provided with a simple Account Class hierarchy that contains
+Account-Base Class 
+Saving Account-Derived Class
+
+An Account has a name and a balance
+A Savings Account is an Account and adds an interest rate.
+
+I have also provided some Account helper functions in Account_Util.h and Account_Util.cpp
+that make it easily display, deposit to and Withdraw from a vector of Accounts and Saving Accounts.
+
+our challenging is the following:
+
+1)Add a (Checking account class) to the Account Hierarchy
+  A checking account has a name and a balance and has a fee of 1.50 per withdrawal transaction.
+  Every Withdrawal transaction will be assessed this flat fee.
+  
+2)Add a (Trust account class) to the Account hierarchy
+  A trust account has a name, a balance, and an interest rate
+  The trust account deposit works just like a saving account deposit 
+  However, any deposits of 5000.00 or more will receive a 50.00 bonus deposited to account
+  
+  Trust Account withdrawal should only allow 3 withdrawals per year and each of these must be less than 20% of the account balance.
+  You dont have to keep track of calendar time for this application, just make sure 4th deposit fails 
+  
+  
+  Hints:
+  Reuse existing functionality!!
+  Think about what the base class will be for the new classes.
+  Add helper functions to account_util.h  and account_util.cpp if you work with your new classes.
+  (you dont have to, but it will make your main much easier to use)
+  
+  Have fun!! You are no longer beginner C++ programmers.
+  
+          **************************
+          Section Challenge Solution
+          **************************
+          
+          
+  class Checking_Account: public Account{ //inheritance class defn 
+        friend std::ostream &operator <<(std::ostream &os, const Checking_Account &Account);
+  private:
+         static constexpr const char *def_name="Unnamed Checking Account";
+         static constexpr double def_balance=0,0;
+         static constexpr double per_check_fee=1.5;
+  public:
+         Checking Account(std::string name=def_name, double balance=def_balance);
+         bool withdraw(double);
+   };
+  #endi
+  
+up to here, this is the checking_account.h file and we move on with the checking_account.cpp
+
+#include Checking_Account.h
+
+Checking_Account::Checking_Account(std::string name, double balance):
+                 Account {name,balance} {
+}
+
+bool Checking_Account::withdraw(double amount){
+      amount+=per_check_fee;
+      return Account::withdraw(amount);
+}
+
+std::ostream &operator << (std::ostream &os, const Checking_Account &Account){
+       os<<"[Checking_Account:"<< account.name << ":" << account.balance << "]";
+       return os;
+}
+
+up to here we cretaed Checking_Account.cpp and now we will create Trust_Account.h.
+
+#include "Saving_Account.h"
+
+class Trust_Account: public: Saving_Account{
+      friend std::ostream &operator << (std::ostream &os, const Trust_Account &account);
+private:
+      static constexpr const char *def_name="Unnamed Trust Account";
+      static constexpr double def_balance=0.0;
+      static constexpr double def_int_rate=0.0;
+      static constexpr double bonus_amount=50.0;
+      static constexpr double bonus_threshold=5000.0;
+      static constexpr int max_withdrawals=3;
+      static constexpr double max_withdraw_percent=0.2;
+protected:
+      int num_withdrawals;
+public:
+      Trust_Account(std::string name=def_name, double balance=def_balance, double int_rate=def_int_rate);
+      bool deposit(double amount);
+      bool withdraw(double amount);
+ };
+ #endif
+ 
+ 
+ And here's the implementation file for the trust account 
+ 
+ #include "Trust_Account.h"
+ 
+ Trust_Account::Trust_Account(std::string name, double balance, double int_rate):
+              Saving_Account{name, balance, int_rate} num_withdrawals{0}{
+              }
+ bool Trust_Account::deposit(double_amount)
+                 
+         
+         
+
 
 
 
