@@ -65,7 +65,26 @@ Generalization:-->E<D<C<B<A
 Specialization:-->A<B<C<D<E
 
 Classes:
+-Person
+-Employee is derived from Person
+-Student is derived from Person
+-Faculty is derived from Employee
+-Staff is derived from Employee
+-Administrator is derived from Employee
 
+Inheritance Versus Composition 
+
+-Public Inheritance: is a relationship 
+-Employee is a person 
+-Checking account is a Account 
+-Circle is a Shape
+
+-Composition:has a relationship 
+-Person has a Account 
+-Player has a Special Attack 
+-Circle has a Location 
+
+-
 
 
 
