@@ -1,4 +1,8 @@
-Polymorphism:
+Polymorphism:Temel sınıftan, türetilmiş sınıfa kalıtım yoluyla aktarılan,
+fakat türetilmiş sınıfta farklı bir şekilde kullanılabilmesine izin verilen sınıf üyesi, çok biçimli bir üyedir.
+
+
+
 -Compile-time/early binding/static binding 
 -Run-time/late binding/ dynamic binding 
 
