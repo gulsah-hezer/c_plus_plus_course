@@ -1,1 +1,69 @@
+Polymorphism:
+-Compile-time/early binding/static binding 
+-Run-time/late binding/ dynamic binding 
+
+Run-time polymorphism= being able to assign different meanings to the same function at run-time.
+Run-time polymorphism= Function Overriding 
+
+Compile-time polymorphism= function overloading and operator overloading
+
+*************************
+A NON POLYMORPHIC EXAMPLE
+*************************
+
+Account a;
+a.withdraw(1000);   //Account::withdraw();
+
+Savings b;
+b.withdraw(1000);   //Savings::withdraw();
+
+Checking c;
+c.withdraw(1000);   //Checking::withdraw();
+
+Trust d;
+d.withdraw(1000);   //Checking::withdraw();
+
+For dynamic polymorphism we must have: Inheritance, Base Class Pointer or base class reference, virtual functions.
+
+************************
+using base class pointer
+************************
+
+Account *p1=new Account()
+Account *p2=new Savings()
+Account *p3=new Checking()
+Account *p4=new Trust()
+
+p1-> withdraw(1000);
+p2-> withdraw(1000);
+p3-> withdraw(1000);
+p4-> withdraw(1000);
+
+-----------------------------
+
+Account *p1=new Account()
+Account *p2=new Savings()
+Account *p3=new Checking()
+Account *p4=new Trust()
+
+Account *array[]={p1,p2,p3,p4};
+for (auto i=0; i<4; i++)
+    array[i]->withdraw(1000);
+-----------------------------
+
+Account *p1=new Account()
+Account *p2=new Savings()
+Account *p3=new Checking()
+Account *p4=new Trust()
+
+vector<Account *> accounts
+      {p1,p2,p3,p4};
+      
+for (auto acc ptr: accounts)
+    acc_ptr->withdraw();
+    
+    
+    
+
+
 
