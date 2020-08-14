@@ -1,0 +1,68 @@
+Declaring and Initializing Arrays
+
+declaration:
+
+Element_Type array_name [ constant number of elements] 
+int test_scores[5];
+int high_score_per_level [10];
+
+initialization:
+Element_Type array_name [ constant number of elements] {init list}
+int test_scores [5] {100,95,99,87,88}
+
+Accesing elements:
+array_name[element index]
+
+Multidimensional arrays:
+Element_Type array_name [dim1_size] [dim2_size]
+
+ex:
+const int rows {3};
+const int cols {4};
+int movie_rating [rows][cols];
+
+initializing multi-dimensional arrays:
+
+int movie_rating [3][4]
+{
+     {0,4,3,5},
+     {2,3,3,5},
+     {1,4,4,5}
+     
+};
+
+Vectors:
+
+-Suppose we want to store test scores for my school 
+-I have no way of knowing how many students will register next year
+-Options:
+     -Pick a size that you are not likely to exceed and use static arrays
+     -Use a dynamic array such as vector.
+ 
+    
+ Declaring:
+ #include <vector>
+ 
+ using namespace std;
+ 
+ vector <char> vowels;
+ vector <int> test_scores;
+ 
+ ex:
+ vector <char> vowels (5);
+ 
+ 
+ Initializing:
+ 
+ vector<char> vowels{'a','e','i','o','u'}
+ 
+ Accessing vektor elements:
+ 
+ vector_name.at(element_index)
+ test_scores.at(1)
+ *************************************
+    
+    
+    
+    
+     
