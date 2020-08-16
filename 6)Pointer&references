@@ -1,1 +1,44 @@
+Pointer Nedir ?
+
+Pointer, işaretçi veya göstericiler değer olarak bellek adresini tutan değişkenlerdir.
+Pointer genellikle dinamik bellek yönetimi için kullanılır.
+
+Pointer tanımlama:
+
+Pointer tanımlama <değişken-türü>*<değişken-adı> biçiminde tanımlanır.
+char *cp;
+int *ip;
+float *fp;
+double *dp;
+
+Pointer yapısı:
+
+Pointer değişken diğer değişken türleri gibi değer saklar.
+Ancak pointer değer olarak tanımladığı türdeki değişkenin bellek adresini saklar.
+Karakter saklanmak istendiğinde char değişken türü kullanılırken bu değişkenin adresini yine char türünde bir 
+pointer değişkeninde saklanması gerekir.
+değişkenin bellek adresi (&) işareti ile alınır.
+
+***********************************************************************
+ex:                                                                   *
+#include <iostream>                                                   *
+                                                                      *
+using namespace std;                                                  *  
+                                                                      *
+int main(){                                                           * 
+                                                                      *
+  int sayi = 1453;                                                    *
+  cout << "Degisken degeri: " << sayi << endl;                        *
+  cout << "Degisken adresi: " << &sayi << endl;                       *
+                                                                      *
+  cout << endl;                                                       *
+                                                                      *
+  int *ptr = &sayi;                                                   *
+  cout << "Pointer'in gosterdigi adres: " << ptr << endl;             *
+  cout << "Pointer'in gosterdigi adres degeri: " << *ptr << endl;     *
+  cout << "Pointer adresi: " << &ptr;                                 *
+                                                                      *
+  return 0;                                                           *
+}                                                                     *
+**********************************************************************
 
