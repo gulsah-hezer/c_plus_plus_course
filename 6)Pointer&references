@@ -42,3 +42,181 @@ int main(){                                                           *
 }                                                                     *
 **********************************************************************
 
+Pointer işlemleri ve diziler:
+Pointerlar bellek adresi tuttuğundan, ekleme ve çıkarma yaparak diziler gibi sıralı bellek değerlerinin okunması sağlanır.
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+  int sayilar[] = {55, 66, 77, 88, 99, 18};
+  int *ptr = sayilar; // &sayilar[0];
+
+  cout << "1.eleman: " << *ptr << endl;
+  ptr++;
+  cout << "2.eleman: " << *ptr << endl;
+  cout << "5.eleman: " << *(ptr + 3) << endl;
+  ptr--;
+  cout << "1.eleman: " << *ptr << endl;
+
+  return 0;
+}
+
+***********************************************
+
+Pointer üzerinden belleğin farklı alanlarına erişim imkanı olduğundan dikkatli kullanılmalıdır.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+  char karakter = 'Y';
+  char *ch = &karakter;
+
+  for (int i = 0; i <= 10; i++){
+    cout << *(ch + i);
+  }
+
+  return 0;
+}
+*********************************
+
+Pointer kullanımı:
+
+Pointer yardımıyla dizi içeriğinin yazdırılması aşağıdaki gibidir.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+  int sayilar[] = {55, 66, 77, 88, 99, 18};
+  int *ptr = sayilar;
+
+  for (int i = 0; i < sizeof(sayilar) / 4; i++){
+    cout << "sayilar[" << i << "] = " << *(ptr + i) << endl;
+  }
+
+  return 0;
+}
+
+*****************************************************
+
+Pointer referans ile fonksiyon çağırma işleminde de sıklıkla kullanılır.
+#include <iostream>
+
+using namespace std;
+
+int degerFonksiyonu(int sayi){
+  sayi = 1453;
+}
+
+int referansFonksiyonu(int *sayi){
+  *sayi = 1453;
+}
+
+int main(){
+
+  int sayi = 10;
+
+  degerFonksiyonu(sayi);
+  cout << sayi << endl;
+
+  referansFonksiyonu(&sayi);
+  cout << sayi << endl;
+
+  return 0;
+}
+
+***************************************************
+
+Pointerların en önemli kullanım alanı dinamik bellek yönetimidir.
+Dinamik bellek yönetimi programın çalışma sırasında bellekten yer ayrılması ve serbest bırakılmasıdır.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+  int elemanSayisi = 0;
+  int *eleman;
+
+  cout << "Eleman sayisi: ";
+  cin >> elemanSayisi;
+
+  eleman = (int *) malloc(elemanSayisi * sizeof(int));
+
+  for (int i = 0; i < elemanSayisi; i++){
+    cout << i + 1 << ". eleman: ";
+    cin >> *(eleman + i);
+  }
+
+  for (int i = 0; i < elemanSayisi; i++ ){
+    cout << eleman[i] << endl;
+  }
+
+  free(eleman);
+
+  return 0;
+}
+******************************************
+
+Pointerin bellek adresini tutan pointerlara pointerin pointeri denir.
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+  int sayi = 1453;
+  int *ptr = &sayi;
+  int **pptr = &ptr;
+  int ***ppptr = &pptr;
+  int ****pppptr = &ppptr;
+
+  cout << sayi << endl;
+  cout << *ptr << endl;
+  cout << **pptr << endl;
+  cout << ***ppptr << endl;
+  cout << ****pppptr << endl;
+
+  return 0;
+}
+**************************************
+Fonksiyon adreslerini tutan pointerlara fonksiyon pointerları denir.
+
+#include <iostream>
+
+using namespace std;
+
+int carpma(int s1, int s2) {
+  return s1 * s2;
+}
+
+int toplama(int s1, int s2) {
+  return s1 + s2;
+}
+
+int main(){
+
+  int (*fonksiyon)(int, int);
+
+  fonksiyon = carpma;
+  cout << fonksiyon(10, 20);
+
+  cout << endl;
+
+  fonksiyon = &toplama;
+  cout << (*fonksiyon)(10, 20);
+
+  return 0;
+}
+**********************************
+
+c++ proglamlama dilinde pointer diziler, nesneler ve karakterler ile işlem yapılırken sıklıla kullanılır.
+
+
+
